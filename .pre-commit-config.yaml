@@ -18,13 +18,13 @@ repos:
     pass_filenames: false
     types: [python]
 
-  - id: type-check
-    name: type-check
-    stages: [commit]
-    language: system
-    entry: pipenv run invoke type-check
-    pass_filenames: false
-    types: [python]
+  # - id: type-check
+  #   name: type-check
+  #   stages: [commit]
+  #   language: system
+  #   entry: pipenv run invoke type-check
+  #   pass_filenames: false
+  #   types: [python]
 
   - id: test
     name: test
