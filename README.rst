@@ -14,10 +14,6 @@ classprop
         :target: https://github.com/romnnn/classprop
         :alt: License
 
-.. image:: https://readthedocs.org/projects/classprop/badge/?version=latest
-        :target: https://classprop.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-
 .. image:: https://codecov.io/gh/romnnn/classprop/branch/master/graph/badge.svg
         :target: https://codecov.io/gh/romnnn/classprop
         :alt: Test Coverage
