@@ -3,26 +3,99 @@
 
 """Tests for `classprop` package."""
 
-import typing
-
-import pytest
-
-from classprop import classprop
+from classprop import ClassPropertyMetaClass, classprop
 
 
-@pytest.fixture  # type: ignore
-def response() -> None:
-    """Sample pytest fixture.
+class TestClassWithMetaclass(metaclass=ClassPropertyMetaClass):
 
-    See more at: http://doc.pytest.org/en/latest/fixture.html
-    """
-    pass
-    # import requests
-    # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
+    _bar = "Hello, World"
+
+    @classprop
+    def my_class_prop(self) -> str:
+        return self._bar
+
+    @my_class_prop.setter
+    def my_class_prop(self, value: str) -> None:
+        self._bar = value
 
 
-def test_content(response: typing.Any) -> None:
-    """Sample pytest test function with the pytest fixture as an argument."""
-    # from bs4 import BeautifulSoup
-    # assert 'GitHub' in BeautifulSoup(response.content).title.string
-    pass
+class TestClass:
+    _bar = "Hello, World"
+
+    @classprop
+    def my_class_prop(self) -> str:
+        return self._bar
+
+    @my_class_prop.setter
+    def my_class_prop(self, value: str) -> None:
+        self._bar = value
+
+    @classprop
+    @classmethod
+    def my_class_prop2(cls) -> str:
+        return cls._bar
+
+    @my_class_prop2.setter
+    @classmethod
+    def my_class_prop2(cls, value: str) -> None:
+        cls._bar = value
+
+
+def test_classprop() -> None:
+    foo = TestClass()
+    assert foo.my_class_prop == "Hello, World"
+
+    baz = TestClass()
+    assert baz.my_class_prop == "Hello, World"
+
+    baz.my_class_prop = "Changed"  # type: ignore
+    assert foo.my_class_prop == "Changed"
+
+    TestClass.my_class_prop = "Should be same for all instances"  # type: ignore
+    assert baz.my_class_prop == "Should be same for all instances"
+    assert foo.my_class_prop == "Should be same for all instances"
+
+
+def test_classprop_metaclass() -> None:
+    foo = TestClassWithMetaclass()
+    assert foo.my_class_prop == "Hello, World"
+
+    baz = TestClassWithMetaclass()
+    assert baz.my_class_prop == "Hello, World"
+
+    baz.my_class_prop = "Changed"  # type: ignore
+    assert foo.my_class_prop == "Changed"
+
+    TestClassWithMetaclass.my_class_prop = "Should be same for all instances"  # type: ignore
+    assert baz.my_class_prop == "Should be same for all instances"
+    assert foo.my_class_prop == "Should be same for all instances"
+
+
+def test_classprop2() -> None:
+    foo = TestClass()
+    assert foo.my_class_prop2 == "Hello, World"
+
+    baz = TestClass()
+    assert baz.my_class_prop2 == "Hello, World"
+
+    baz.my_class_prop2 = "Changed"  # type: ignore
+    assert foo.my_class_prop2 == "Changed"
+
+    TestClass.my_class_prop2 = "Should be same for all instances"  # type: ignore
+    assert baz.my_class_prop2 == "Should be same for all instances"
+    assert foo.my_class_prop2 == "Should be same for all instances"
+
+
+def test_classprop_setattr() -> None:
+    foo = TestClass()
+    assert foo.my_class_prop == "Hello, World"
+
+    baz = TestClass()
+    assert baz.my_class_prop == "Hello, World"
+
+    setattr(TestClass, "my_class_prop", "Changed")
+    assert foo.my_class_prop == "Changed"
+
+    setattr(TestClass, "my_class_prop", "Should be same for all instances")
+    assert baz.my_class_prop == "Should be same for all instances"
+    assert foo.my_class_prop == "Should be same for all instances"

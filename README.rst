@@ -24,19 +24,44 @@ classprop
 
 """"""""
 
-Your short description here. `romnnn.github.io/classprop <https://romnnn.github.io/classprop>`_
+.. role:: python(code)
+   :language: python
+
+Small python package that provides a :python:`@classproperty` decorator for python classes
+that works just like :python:`@property` except for class variables!
 
 .. code-block:: console
 
     $ pip install classprop
 
-See the `official documentation`_ for more information.
-
-.. _official documentation: https://classprop.readthedocs.io
+Use it just like builtin :python:`@property`'s:
 
 .. code-block:: python
 
-    import classprop
+    from classprop import classprop
+
+    class TestClass:
+        _internal = "Hello, World"
+
+        @classprop
+        def my_class_prop(self) -> str:
+            return self._internal
+
+        @my_class_prop.setter
+        def my_class_prop(self, value: str) -> None:
+            self._internal = value
+
+
+
+    foo = TestClass()
+    assert foo.my_class_prop == "Hello, World"
+
+    baz = TestClass()
+    assert baz.my_class_prop == "Hello, World"
+
+    baz.my_class_prop = "Changed"
+    assert foo.my_class_prop == "Changed"
+
 
 Development
 -----------

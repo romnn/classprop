@@ -56,10 +56,11 @@ def lint(c):
 
 
 @task
-def test(c, min_coverage=None):
+def test(c, min_coverage=None, show_output=False):
     """Run tests
     """
     pytest_options = "--cov-fail-under={}".format(min_coverage) if min_coverage else ""
+    pytest_options += " -rP" if show_output else ""
     c.run("pipenv run pytest --cov={} {}".format(SOURCE_DIR, pytest_options))
 
 
