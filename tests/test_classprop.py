@@ -3,12 +3,14 @@
 
 """Tests for `classprop` package."""
 
+import pytest
+
 from classprop import ClassPropertyMetaClass, classprop
 
 
 class TestClassWithMetaclass(metaclass=ClassPropertyMetaClass):
 
-    _bar = "Hello, World"
+    _bar = ""
 
     @classprop
     def my_class_prop(self) -> str:
@@ -20,7 +22,7 @@ class TestClassWithMetaclass(metaclass=ClassPropertyMetaClass):
 
 
 class TestClass:
-    _bar = "Hello, World"
+    _bar = ""
 
     @classprop
     def my_class_prop(self) -> str:
@@ -39,6 +41,17 @@ class TestClass:
     @classmethod
     def my_class_prop2(cls, value: str) -> None:
         cls._bar = value
+
+
+@pytest.fixture(autouse=True)
+def wrap_tests():
+    """Make sure to reset class variables for each test"""
+    default = "Hello, World"
+    TestClassWithMetaclass._bar = default
+    TestClass._bar = default
+    yield
+    TestClassWithMetaclass._bar = default
+    TestClass._bar = default
 
 
 def test_classprop() -> None:
