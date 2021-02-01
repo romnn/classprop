@@ -2,7 +2,7 @@
 
 """Top-level package for classprop."""
 
-__author__ = """romnnn"""
+__author__ = """romnn"""
 __email__ = "contact@romnn.com"
 __version__ = "0.1.0"
 

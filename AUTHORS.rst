@@ -5,7 +5,7 @@ Authors
 Maintainers
 -----------
 
-* romnnn <contact@romnn.com>
+* romnn <contact@romnn.com>
 
 Contributors
 ------------

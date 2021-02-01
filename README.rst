@@ -2,20 +2,20 @@
 classprop
 ===============================
 
-.. image:: https://travis-ci.com/romnnn/classprop.svg?branch=master
-        :target: https://travis-ci.com/romnnn/classprop
+.. image:: https://travis-ci.com/romnn/classprop.svg?branch=master
+        :target: https://travis-ci.com/romnn/classprop
         :alt: Build Status
 
 .. image:: https://img.shields.io/pypi/v/classprop.svg
         :target: https://pypi.python.org/pypi/classprop
         :alt: PyPI version
 
-.. image:: https://img.shields.io/github/license/romnnn/classprop
-        :target: https://github.com/romnnn/classprop
+.. image:: https://img.shields.io/github/license/romnn/classprop
+        :target: https://github.com/romnn/classprop
         :alt: License
 
-.. image:: https://codecov.io/gh/romnnn/classprop/branch/master/graph/badge.svg
-        :target: https://codecov.io/gh/romnnn/classprop
+.. image:: https://codecov.io/gh/romnn/classprop/branch/master/graph/badge.svg
+        :target: https://codecov.io/gh/romnn/classprop
         :alt: Test Coverage
 
 """"""""

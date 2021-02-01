@@ -55,7 +55,7 @@ dev_requirements = (
 )
 
 setup(
-    author="romnnn",
+    author="romnn",
     author_email="contact@romnn.com",
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
@@ -87,7 +87,7 @@ setup(
     name="classprop",
     packages=find_packages(include=["classprop"]),
     test_suite="tests",
-    url="https://github.com/romnnn/classprop",
+    url="https://github.com/romnn/classprop",
     version=version,
     zip_safe=False,
 )

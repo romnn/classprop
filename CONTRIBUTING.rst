@@ -13,7 +13,7 @@ How can I contribute?
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/romnnn/classprop/issues.
+Report bugs at https://github.com/romnn/classprop/issues.
 
 If you are reporting a bug, please include:
 
@@ -43,7 +43,7 @@ articles, and such.
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to `file an issue <https://github.com/romnnn/classprop/issues>`_ on GitHub.
+The best way to send feedback is to `file an issue <https://github.com/romnn/classprop/issues>`_ on GitHub.
 
 If you are proposing a feature:
 
@@ -57,7 +57,7 @@ Get Started!
 
 Ready to contribute? Here's how to set up classprop for local development.
 
-1. Fork the `classprop repo <https://github.com/romnnn/classprop>`_ on GitHub.
+1. Fork the `classprop repo <https://github.com/romnn/classprop>`_ on GitHub.
 2. Clone your fork locally::
 
     $ git clone git@github.com:your_name_here/classprop.git
@@ -101,7 +101,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring and add the
    feature to the list in ``README.rst``.
 3. The pull request should work for python 3.5+. Check the
-   `build status of your pull request <https://travis-ci.com/romnnn/classprop/pull_requests>`_
+   `build status of your pull request <https://travis-ci.com/romnn/classprop/pull_requests>`_
    and make sure that all tests pass for all supported python versions.
 
 Publishing (Maintainers only)
@@ -112,4 +112,4 @@ After merging the changes, tag your commits with a new version and push to GitHu
 $ bump2version (major | minor | patch)
 $ git push --tags
 
-.. _GitHub issues: https://github.com/romnnn/classprop/issues
+.. _GitHub issues: https://github.com/romnn/classprop/issues
