@@ -18,7 +18,6 @@ pyfakefs = "*"
 mypy = "*"
 # Coverage
 coverage = "*"
-codecov = "*"
 # Tools
 pre-commit = "*"
 invoke = "*"
