@@ -44,7 +44,7 @@ def format(c, check=False):
     python_dirs_string = " ".join(PYTHON_DIRS)
     black_options = "--diff" if check else ""
     c.run("pipenv run black {} {}".format(black_options, python_dirs_string))
-    isort_options = "--recursive {}".format("--check-only" if check else "")
+    isort_options = "--check-only" if check else ""
     c.run("pipenv run isort {} {}".format(isort_options, python_dirs_string))
 
 
