@@ -1,9 +1,9 @@
 ===============================
-classprop
+@classprop
 ===============================
 
-.. image:: https://travis-ci.com/romnn/classprop.svg?branch=master
-        :target: https://travis-ci.com/romnn/classprop
+.. image:: https://github.com/romnn/classprop/workflows/test/badge.svg
+        :target: https://github.com/romnn/classprop/actions
         :alt: Build Status
 
 .. image:: https://img.shields.io/pypi/v/classprop.svg
